@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+const config = useRuntimeConfig()
 
 export const useMySteamUserStoreStore = defineStore({
   id: 'mySteamUserStoreStore',
@@ -9,8 +10,8 @@ export const useMySteamUserStoreStore = defineStore({
   }),
   actions: {
     async fetchUserData(steamID: string) {
-      const apiKey = 'APi';
-      const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2/?key=${apiKey}&steamids=${steamID}`;
+      const apiKey = config.public.apiBase;
+      const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamID}`;
 
       try {
         const response = await fetch(url);

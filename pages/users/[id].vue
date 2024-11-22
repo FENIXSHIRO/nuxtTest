@@ -6,7 +6,7 @@ const route = useRoute()
 const store = useMySteamUserStoreStore()
 
 // Загружаем данные пользователя при загрузке страницы
-store.fetchUserData(route.params.id[0])
+store.fetchUserData(route.params.id.toString())
 </script>
 
 <template>

@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@primevue/nuxt-module',
   ],
+  runtimeConfig: {
+    apiSecret: '',
+  },
   primevue: {
     options: {
       ripple: true,

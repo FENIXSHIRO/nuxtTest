@@ -1,33 +1,31 @@
 import { defineStore } from 'pinia'
-const config = useRuntimeConfig()
 
-export const useMySteamUserStoreStore = defineStore({
-  id: 'mySteamUserStoreStore',
+type SteamPlayer = {
+  steamid: string
+  personaname: string
+  avatarfull: string
+}
+
+export const useMySteamUserStoreStore = defineStore('mySteamUserStoreStore', {
   state: () => ({
     userID: '',
     userName: '',
     avatarURL: '',
   }),
+
   actions: {
     async fetchUserData(steamID: string) {
-      const apiKey = config.public.apiBase;
-      const url = `https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=${apiKey}&steamids=${steamID}`;
+      const url = `/api/getSteamUserData?steamID=${steamID}`
 
       try {
-        const response = await fetch(url);
-        const data = await response.json();
+        const player: SteamPlayer = await $fetch(url)
 
-        if (data.response.players && data.response.players.length > 0) {
-          const player = data.response.players[0];
-          this.userID = player.steamid;
-          this.userName = player.personaname;
-          this.avatarURL = player.avatarfull;
-        } else {
-          throw new Error('Пользователь не найден');
-        }
+        this.userID = player.steamid
+        this.userName = player.personaname
+        this.avatarURL = player.avatarfull
       } catch (error) {
-        console.error('Ошибка при получении данных: ', error);
+        console.error('Ошибка при получении данных: ', error)
       }
     },
-  }
+  },
 })

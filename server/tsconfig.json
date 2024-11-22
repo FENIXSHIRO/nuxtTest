@@ -1,3 +1,6 @@
 {
+  "compilerOptions": {
+    "useUnknownInCatchVariables": false,
+  },
   "extends": "../.nuxt/tsconfig.server.json"
 }

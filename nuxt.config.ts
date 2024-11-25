@@ -12,6 +12,16 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
   },
+  app: {
+    pageTransition: {
+      name: 'fade',
+      mode: 'out-in'
+    },
+    layoutTransition: {
+      name: 'slide',
+      mode: 'out-in'
+    }
+  },
   primevue: {
     options: {
       ripple: true,

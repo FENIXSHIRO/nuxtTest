@@ -12,6 +12,11 @@ export default defineNuxtConfig({
   runtimeConfig: {
     apiSecret: '',
   },
+  nitro: {
+    prerender: {
+      routes: ["/"],
+    },
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
   },

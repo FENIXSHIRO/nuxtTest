@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const route = useRoute()
-const id = ref('76561197960435530');
+const ogrn = ref('311760419400010');
 
 const findUser = async () => {
-  await navigateTo('/users/' + id.value);
+  await navigateTo('/companies/' + ogrn.value);
 }
 
 useHead({
@@ -15,7 +15,7 @@ useHead({
   <div>
     <h1 class="text-2xl">Главная страница</h1>
     <p>Current route: {{ route.path }}</p>
-    <InputText type="text" v-model="id" />
+    <InputText type="text" v-model="ogrn" />
     <br>
     <Button label="Find" @click="findUser"/>
   </div>

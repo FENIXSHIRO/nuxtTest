@@ -17,7 +17,8 @@
     "pinia": "^2.2.6",
     "primevue": "^4.2.2",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue-yandex-maps": "^2.1.4"
   },
   "overrides": {
     "vue": "latest"

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
     '@primevue/nuxt-module',
+    'vue-yandex-maps/nuxt',
   ],
   runtimeConfig: {
     apiSecret: '',
@@ -19,6 +20,9 @@ export default defineNuxtConfig({
   },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' }
+  },
+  yandexMaps: {
+    apikey: '4475d6fc-d4df-4df5-b5b1-5e2faf007c4f',
   },
   primevue: {
     options: {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const ogrn = ref('311760419400010');
+const ogrn = ref('1000400664362');
 
 const findUser = async () => {
   await navigateTo('/companies/' + ogrn.value);

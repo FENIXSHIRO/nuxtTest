@@ -36,19 +36,21 @@ useHead({
 
     <ClientOnly fallback-tag="span" fallback="Maps">
       <p>Карты:</p>
-      <yandex-map
-          v-model="map"
-          :settings="{
-            location: {
-              center: [37.617644, 55.755819],
-              zoom: 9,
-            },
-          }"
-          width="100%"
-          height="500px"
-      >
-        <yandex-map-default-scheme-layer/>
-      </yandex-map>
+      <div>
+        <yandex-map
+            v-model="map"
+            :settings="{
+              location: {
+                center: [37.617644, 55.755819],
+                zoom: 9,
+              },
+            }"
+            width="100%"
+            height="500px"
+        >
+          <yandex-map-default-scheme-layer class="rounded-2xl border border-black"/>
+        </yandex-map>
+      </div>
     </ClientOnly>
 
   </div>

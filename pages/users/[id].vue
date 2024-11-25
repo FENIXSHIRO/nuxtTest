@@ -37,6 +37,9 @@ useHead({
     <div v-if="route.path !== '/users/76561198255838754'">
       <NuxtLink class="text-green-400" to="/users/76561198255838754">Мой профиль</NuxtLink>
     </div>
-    <NuxtLink class="text-green-400" :to="`/users/${BigInt(userData!.userID) + 1n}`">Дальше</NuxtLink>
+    <div class="flex flex-row justify-between">
+      <NuxtLink class="text-green-400" :to="`/users/${BigInt(userData!.userID) - 1n}`">Назад</NuxtLink>
+      <NuxtLink class="text-green-400" :to="`/users/${BigInt(userData!.userID) + 1n}`">Дальше</NuxtLink>
+    </div>
   </div>
 </template>

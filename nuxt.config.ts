@@ -13,14 +13,7 @@ export default defineNuxtConfig({
     apiSecret: '',
   },
   app: {
-    pageTransition: {
-      name: 'fade',
-      mode: 'out-in'
-    },
-    layoutTransition: {
-      name: 'slide',
-      mode: 'out-in'
-    }
+    pageTransition: { name: 'page', mode: 'out-in' }
   },
   primevue: {
     options: {

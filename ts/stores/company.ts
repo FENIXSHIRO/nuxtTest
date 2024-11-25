@@ -15,7 +15,7 @@ export const useCompanyStore = defineStore('companyStore', {
 
   actions: {
     async fetchUserData(ogrn: string) {
-      const url = `http://192.168.1.248/api/company_search/company/${ogrn}`
+      const url = `/api/getCompanyData?ogrn=${ogrn}`
 
       try {
         const data = await $fetch(url);

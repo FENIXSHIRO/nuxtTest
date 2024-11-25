@@ -5,6 +5,10 @@ const id = ref('76561197960435530');
 const findUser = async () => {
   await navigateTo('/users/' + id.value);
 }
+
+useHead({
+  title: 'Главная'
+})
 </script>
 
 <template>
